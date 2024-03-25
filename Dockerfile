@@ -1,8 +1,8 @@
-FROM golang:1.14.2-alpine AS build
+FROM registry.cn-hangzhou.aliyuncs.com/tekton/golang:1.14.2-alpine AS build
 COPY main.go .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
 
-FROM scratch
+FROM registry.cn-hangzhou.aliyuncs.com/tekton/golang:1.14.2-alpine
 COPY --from=build /go/app /bin/
 EXPOSE 8080
 CMD ["app"]
