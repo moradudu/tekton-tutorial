@@ -18,4 +18,4 @@ spec:
     spec:
       containers:
         - name: tekton-tutorial
-          image: example.com/harbur/tekton-tutorial
+          image: registry.cn-hangzhou.aliyuncs.com/secrity/tekton-test:1.0.0
